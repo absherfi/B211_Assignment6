@@ -8,9 +8,14 @@ Project Structure
 The project includes the following components:
 
 Preprocessing: Standardization of feature data to improve model performance for Logistic Regression and SVM.
+
 Modeling: Implementation of three different classification models: Logistic Regression, Random Forest, and SVM.
+
 Evaluation: Use of metrics like accuracy, precision, recall, and F1-score to compare model performance.
+
 Final Analysis: Selection of the best model based on performance.
+
+
 Class Design and Implementation
 While this project doesn't include object-oriented programming (OOP) classes, it is structured using modular functions. If OOP design is preferred, here is how the project could be structured into classes:
 
@@ -22,10 +27,14 @@ X: Feature data.
 y: Target labels (malignant or benign).
 Methods:
 __init__(self, X, y): Initializes the DataProcessor object with the dataset.
+
 split_data(self, test_size=0.2, random_state=42): Splits the data into training and test sets using the provided test size and random seed.
+
 scale_data(self): Scales the training and test data using StandardScaler.
+
 Limitations:
 Scaling Assumption: Only features are scaled, not the target labels.
+
 2. ModelBuilder Class
 This class manages the instantiation, training, and prediction for each of the machine learning models.
 
@@ -33,10 +42,14 @@ Attributes:
 models: A dictionary containing instantiated models (Logistic Regression, Random Forest, SVM).
 Methods:
 __init__(self): Initializes the available models.
+
 train(self, model_name, X_train, y_train): Trains the selected model on the training data.
+
 predict(self, model_name, X_test): Generates predictions using the specified model on the test data.
+
 Limitations:
 Model Parameters: Default parameters are used for each model unless manually adjusted by the user. This limits optimization without hyperparameter tuning.
+
 3. ModelEvaluator Class
 This class is responsible for evaluating the performance of each model using various metrics.
 
